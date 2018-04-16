@@ -33,5 +33,14 @@ namespace Meta_Game {
         private void button1_Click(object sender, EventArgs e) {
 
         }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+            MessageBox.Show("Why would you want to leave?");
+            e.Cancel = true;
+        }
     }
 }
