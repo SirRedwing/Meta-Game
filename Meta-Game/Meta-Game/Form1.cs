@@ -39,7 +39,9 @@ namespace Meta_Game {
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
-            MessageBox.Show("Why would you want to leave?");
+            ExitDialog ed = new ExitDialog();
+            ed.Show();
+            //MessageBox.Show("Why are you leaving? Aren't you having fun?");
             e.Cancel = true;
         }
     }
