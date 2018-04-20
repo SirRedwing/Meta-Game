@@ -16,6 +16,10 @@ namespace Meta_Game
         {
             InitializeComponent();
         }
+        public void Randomness()
+        {
+            Random randNum = new Random();
+        } 
 
         private void FontDialog1_Apply(object sender, EventArgs e)
         {
@@ -32,13 +36,18 @@ namespace Meta_Game
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ExitDialog ed = new ExitDialog();
-            ed.Show();
-            //MessageBox.Show("Why are you leaving? Aren't you having fun?");
+            ExitDialog exit = new ExitDialog();
+            exit.Show();
             e.Cancel = true;
         }
         private void Menu_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            button1.Hide();
 
         }
     }
