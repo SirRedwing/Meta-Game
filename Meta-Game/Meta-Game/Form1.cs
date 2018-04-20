@@ -15,7 +15,6 @@ namespace Meta_Game
         public Form1()
         {
             InitializeComponent();
-            //textBox1.Anchor = 
         }
 
         private void FontDialog1_Apply(object sender, EventArgs e)

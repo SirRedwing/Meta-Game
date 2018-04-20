@@ -16,7 +16,6 @@ namespace Meta_Game
         public ExitDialog()
         {
             InitializeComponent();
-            this.ControlBox = false;
         }
 
         private void ExitDialog_Load(object sender, EventArgs e)
