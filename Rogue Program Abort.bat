@@ -3,5 +3,8 @@ set /p appName="Enter rogue program name: "
 echo Shutting down rogue program. . .
 timeout /t 3 /nobreak > nul
 TASKKILL /F /IM %appName% > nul
-echo Command execution complete.
+echo Command execution complete
+if %appName% == "explorer.exe" (
+	start explorer.exe
+)
 pause
