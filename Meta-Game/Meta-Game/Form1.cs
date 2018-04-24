@@ -16,22 +16,21 @@ namespace Meta_Game
         public Form1()
         {
             InitializeComponent();
-
-            flower.Hide();
+            textBox1.Text = $"{pointValue}";
         }
-        public void Randomness()
+        public void RandomMove()
         {
             Random randNum = new Random();
-            int nextBox = randNum.Next(0, 8);
-            Button[] buttons = new Button[] { flower }; // ...
-            Button button = buttons[nextBox];
-            button.Show();
+
+            int newPositionX = randNum.Next(10, 1190);
+            int newPositionY = randNum.Next(10, 710);
+            flower.Location = new Point(newPositionX, newPositionY);
         }
 
         public void Points()
         {
             pointValue++;
-            flower.Location = new Point(4, 1);
+            textBox1.Text = $"{pointValue}";
         }
         private void FontDialog1_Apply(object sender, EventArgs e)
         {
@@ -58,13 +57,19 @@ namespace Meta_Game
         }
         private void Button10_Click(object sender, EventArgs e)
         {
-            Randomness();
+            RandomMove();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             //button1.Hide();
             Points();
+            RandomMove();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
