@@ -33,25 +33,26 @@
             // Menu
             // 
             this.Menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Menu.Location = new System.Drawing.Point(1128, 12);
+            this.Menu.Image = global::Meta_Game.Properties.Resources.Menu_Button;
+            this.Menu.Location = new System.Drawing.Point(1122, 12);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(44, 26);
+            this.Menu.Size = new System.Drawing.Size(50, 25);
             this.Menu.TabIndex = 6;
-            this.Menu.Text = "Menu";
             this.Menu.UseVisualStyleBackColor = true;
             this.Menu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // flower
             // 
-            this.flower.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.flower.BackColor = System.Drawing.Color.Transparent;
+            this.flower.CausesValidation = false;
             this.flower.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.flower.FlatAppearance.BorderSize = 0;
-            this.flower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.flower.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.flower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.flower.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.flower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flower.ForeColor = System.Drawing.Color.Transparent;
             this.flower.Image = ((System.Drawing.Image)(resources.GetObject("flower.Image")));
-            this.flower.Location = new System.Drawing.Point(309, 191);
+            this.flower.Location = new System.Drawing.Point(305, 159);
             this.flower.Margin = new System.Windows.Forms.Padding(0);
             this.flower.Name = "flower";
             this.flower.Size = new System.Drawing.Size(150, 150);
@@ -84,6 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::Meta_Game.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.PointsBox);
             this.Controls.Add(this.FunctionTest);

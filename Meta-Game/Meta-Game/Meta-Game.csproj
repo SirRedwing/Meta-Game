@@ -94,5 +94,14 @@
   <ItemGroup>
     <None Include="Resources\Flower_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strange_Blob.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

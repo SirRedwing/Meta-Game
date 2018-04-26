@@ -63,6 +63,16 @@ namespace Meta_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background {
+            get {
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flower_1 {
             get {
                 object obj = ResourceManager.GetObject("Flower_1", resourceCulture);
@@ -76,6 +86,26 @@ namespace Meta_Game.Properties {
         internal static System.Drawing.Bitmap Flower_2 {
             get {
                 object obj = ResourceManager.GetObject("Flower_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Menu_Button {
+            get {
+                object obj = ResourceManager.GetObject("Menu_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Strange_Blob {
+            get {
+                object obj = ResourceManager.GetObject("Strange_Blob", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
