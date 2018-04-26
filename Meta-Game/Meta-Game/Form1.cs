@@ -10,7 +10,7 @@ namespace Meta_Game
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = $"{pointValue}";
+            PointsBox.Text = $"{pointValue}";
         }
         public void RandomMove()
         {
@@ -24,7 +24,7 @@ namespace Meta_Game
         public void Points()
         {
             pointValue++;
-            textBox1.Text = $"{pointValue}";
+            PointsBox.Text = $"{pointValue}";
         }
         private void FontDialog1_Apply(object sender, EventArgs e)
         {

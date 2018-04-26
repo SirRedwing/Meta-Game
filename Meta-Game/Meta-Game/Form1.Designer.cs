@@ -26,7 +26,7 @@
             this.Menu = new System.Windows.Forms.Button();
             this.flower = new System.Windows.Forms.Button();
             this.FunctionTest = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PointsBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Menu
@@ -60,21 +60,21 @@
             this.FunctionTest.UseVisualStyleBackColor = true;
             this.FunctionTest.Click += new System.EventHandler(this.Button10_Click);
             // 
-            // textBox1
+            // PointsBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(596, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.Text = "Points: ";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.PointsBox.Location = new System.Drawing.Point(596, 29);
+            this.PointsBox.Name = "PointsBox";
+            this.PointsBox.Size = new System.Drawing.Size(107, 20);
+            this.PointsBox.TabIndex = 17;
+            this.PointsBox.Text = "Points: ";
+            this.PointsBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 681);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PointsBox);
             this.Controls.Add(this.FunctionTest);
             this.Controls.Add(this.flower);
             this.Controls.Add(this.Menu);
@@ -95,7 +95,7 @@
         private System.Windows.Forms.Button Menu;
         private System.Windows.Forms.Button flower;
         private System.Windows.Forms.Button FunctionTest;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PointsBox;
     }
 }
 

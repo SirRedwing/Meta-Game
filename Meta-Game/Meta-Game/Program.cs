@@ -1,6 +1,6 @@
 ﻿// File/Project Prolog
-// Name:     <PUT YOUR NAME HERE>
-// Period:   <PUT YOUR PERIOD HERE>
+// Name:     Collin Campbell
+// Period:   A4
 // Username: campbcol007
 // Project:  Meta_Game
 // Date:     4/12/2018 1:42:57 PM
