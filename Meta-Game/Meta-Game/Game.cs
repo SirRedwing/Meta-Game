@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Meta_Game
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         public int pointValue;
-        public Form1()
+        public Game()
         {
             InitializeComponent();
             PointsBox.Text = $"{pointValue}";
@@ -16,9 +16,39 @@ namespace Meta_Game
         {
             Random randNum = new Random();
 
-            int newPositionX = randNum.Next(10, 1190);
-            int newPositionY = randNum.Next(10, 710);
+            int newPositionX = randNum.Next(200, 1000);
+            int newPositionY = randNum.Next(200, 520);
             flower.Location = new Point(newPositionX, newPositionY);
+        }
+
+        public void RandomImage()
+        {
+            Random randImg = new Random();
+
+            int nextImg = randImg.Next(1, 3);
+            /*switch (nextImg)
+            {
+                case 0:
+                    flower.Image = Properties.Resources.Flower_1;
+
+                    break;
+
+                case 1:
+                    flower.Image = Properties.Resources.Flower_2;
+
+                    break;
+            }*/
+
+            if (nextImg == 1)
+            {
+                flower.Image = Properties.Resources.Flower_1;
+                System.Diagnostics.Debug.WriteLine("Came out as 1");
+            }
+            else if (nextImg == 2)
+            {
+                flower.Image = Properties.Resources.Flower_2;
+                System.Diagnostics.Debug.WriteLine("Came out as 2");
+            }
         }
 
         public void Points()
@@ -54,14 +84,14 @@ namespace Meta_Game
             RandomMove();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Flower_Click(object sender, EventArgs e)
         {
-            //button1.Hide();
             Points();
             RandomMove();
+            RandomImage();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

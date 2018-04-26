@@ -1,5 +1,5 @@
 ﻿namespace Meta_Game {
-    partial class Form1 {
+    partial class Game {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Menu = new System.Windows.Forms.Button();
             this.flower = new System.Windows.Forms.Button();
             this.FunctionTest = new System.Windows.Forms.Button();
@@ -42,13 +43,22 @@
             // 
             // flower
             // 
+            this.flower.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.flower.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.flower.FlatAppearance.BorderSize = 0;
+            this.flower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.flower.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.flower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.flower.ForeColor = System.Drawing.Color.Transparent;
+            this.flower.Image = ((System.Drawing.Image)(resources.GetObject("flower.Image")));
             this.flower.Location = new System.Drawing.Point(309, 191);
+            this.flower.Margin = new System.Windows.Forms.Padding(0);
             this.flower.Name = "flower";
-            this.flower.Size = new System.Drawing.Size(75, 23);
+            this.flower.Size = new System.Drawing.Size(150, 150);
             this.flower.TabIndex = 7;
-            this.flower.Text = "FLOWER";
-            this.flower.UseVisualStyleBackColor = true;
-            this.flower.Click += new System.EventHandler(this.Button1_Click);
+            this.flower.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.flower.UseVisualStyleBackColor = false;
+            this.flower.Click += new System.EventHandler(this.Flower_Click);
             // 
             // FunctionTest
             // 
@@ -67,12 +77,13 @@
             this.PointsBox.Size = new System.Drawing.Size(107, 20);
             this.PointsBox.TabIndex = 17;
             this.PointsBox.Text = "Points: ";
-            this.PointsBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // Form1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.PointsBox);
             this.Controls.Add(this.FunctionTest);
@@ -81,7 +92,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
