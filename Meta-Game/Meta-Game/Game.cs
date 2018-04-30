@@ -10,7 +10,12 @@ namespace Meta_Game
         public Game()
         {
             InitializeComponent();
-            PointsBox.Text = $"{pointValue}";
+            SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.DoubleBuffer,
+                true);
+            PointsBox.Text = String.Format($"{0}", pointValue);
         }
         public void RandomMove()
         {
@@ -26,35 +31,24 @@ namespace Meta_Game
             Random randImg = new Random();
 
             int nextImg = randImg.Next(1, 3);
-            /*switch (nextImg)
+            switch (nextImg)
             {
-                case 0:
-                    flower.Image = Properties.Resources.Flower_1;
-
-                    break;
-
                 case 1:
-                    flower.Image = Properties.Resources.Flower_2;
-
+                    flower.Image = Properties.Resources.Flower_1;
+                    System.Diagnostics.Debug.WriteLine("Came out as 1");
                     break;
-            }*/
 
-            if (nextImg == 1)
-            {
-                flower.Image = Properties.Resources.Flower_1;
-                System.Diagnostics.Debug.WriteLine("Came out as 1");
-            }
-            else if (nextImg == 2)
-            {
-                flower.Image = Properties.Resources.Flower_2;
-                System.Diagnostics.Debug.WriteLine("Came out as 2");
+                case 2:
+                    flower.Image = Properties.Resources.Flower_2;
+                    System.Diagnostics.Debug.WriteLine("Came out as 2");
+                    break;
             }
         }
 
         public void Points()
         {
             pointValue++;
-            PointsBox.Text = $"{pointValue}";
+            PointsBox.Text = String.Format($"{0}", pointValue);
         }
         private void FontDialog1_Apply(object sender, EventArgs e)
         {
