@@ -98,6 +98,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Game_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,7 +106,9 @@
         }
 
         #endregion
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         private System.Windows.Forms.Button Menu;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         private System.Windows.Forms.Button flower;
         private System.Windows.Forms.Button FunctionTest;
         private System.Windows.Forms.TextBox PointsBox;
