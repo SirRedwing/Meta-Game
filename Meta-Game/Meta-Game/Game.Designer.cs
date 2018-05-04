@@ -32,17 +32,18 @@
             // 
             // Menu
             // 
-            this.Menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Menu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Menu.Image = global::Meta_Game.Properties.Resources.Menu_Button;
-            this.Menu.Location = new System.Drawing.Point(1122, 12);
+            this.Menu.Location = new System.Drawing.Point(1124, 14);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(50, 25);
+            this.Menu.Size = new System.Drawing.Size(46, 21);
             this.Menu.TabIndex = 6;
             this.Menu.UseVisualStyleBackColor = true;
             this.Menu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // flower
             // 
+            this.flower.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flower.BackColor = System.Drawing.Color.Transparent;
             this.flower.CausesValidation = false;
             this.flower.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -52,10 +53,10 @@
             this.flower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flower.ForeColor = System.Drawing.Color.Transparent;
             this.flower.Image = ((System.Drawing.Image)(resources.GetObject("flower.Image")));
-            this.flower.Location = new System.Drawing.Point(305, 159);
+            this.flower.Location = new System.Drawing.Point(307, 161);
             this.flower.Margin = new System.Windows.Forms.Padding(0);
             this.flower.Name = "flower";
-            this.flower.Size = new System.Drawing.Size(150, 150);
+            this.flower.Size = new System.Drawing.Size(146, 146);
             this.flower.TabIndex = 7;
             this.flower.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.flower.UseVisualStyleBackColor = false;
@@ -63,9 +64,10 @@
             // 
             // FunctionTest
             // 
-            this.FunctionTest.Location = new System.Drawing.Point(462, 29);
+            this.FunctionTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FunctionTest.Location = new System.Drawing.Point(464, 31);
             this.FunctionTest.Name = "FunctionTest";
-            this.FunctionTest.Size = new System.Drawing.Size(128, 23);
+            this.FunctionTest.Size = new System.Drawing.Size(124, 19);
             this.FunctionTest.TabIndex = 16;
             this.FunctionTest.Text = "Function Test";
             this.FunctionTest.UseVisualStyleBackColor = true;
@@ -73,9 +75,10 @@
             // 
             // PointsBox
             // 
-            this.PointsBox.Location = new System.Drawing.Point(596, 29);
+            this.PointsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PointsBox.Location = new System.Drawing.Point(598, 31);
             this.PointsBox.Name = "PointsBox";
-            this.PointsBox.Size = new System.Drawing.Size(107, 20);
+            this.PointsBox.Size = new System.Drawing.Size(103, 20);
             this.PointsBox.TabIndex = 17;
             this.PointsBox.Text = "Points: ";
             this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
@@ -95,8 +98,8 @@
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MaximizeBox = false;
             this.Name = "Game";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Game_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-// ReSharper disable InconsistentNaming
 
 namespace Meta_Game {
     public partial class Game: Form {
@@ -14,6 +13,7 @@ namespace Meta_Game {
                 ControlStyles.DoubleBuffer,
                 true);
             PointsBox.Text = String.Format($"{0}", PointValue);
+            
         }
 
         private void RandomMove() {
