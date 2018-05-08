@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Meta_Game {
     public partial class Game: Form {
-        private int PointValue;
+        public int PointValue;
         public Game() {
             InitializeComponent();
             SetStyle(
@@ -13,8 +13,20 @@ namespace Meta_Game {
                 ControlStyles.DoubleBuffer,
                 true);
             PointsBox.Text = String.Format($"{0}", PointValue);
-            
         }
+        
+        /*
+        private static void Shake(Form form) {
+            var original = form.Location;
+            var rnd = new Random(1337);
+            const int shakeAmplitude = 1;
+            for(int i = 0; i < 10; i++) {
+                form.Location = new Point(original.X + rnd.Next(-shakeAmplitude, shakeAmplitude), original.Y + rnd.Next(-shakeAmplitude, shakeAmplitude));
+                System.Threading.Thread.Sleep(20);
+            }
+            form.Location = original;
+        }
+        */
 
         private void RandomMove() {
             Random randNum = new Random();
@@ -57,7 +69,7 @@ namespace Meta_Game {
 
         }
         private void Button10_Click(object sender, EventArgs e) {
-            RandomMove();
+            Points();
         }
 
         private void Flower_Click(object sender, EventArgs e) {

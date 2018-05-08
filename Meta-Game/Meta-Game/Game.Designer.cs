@@ -78,6 +78,7 @@
             this.PointsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PointsBox.Location = new System.Drawing.Point(598, 31);
             this.PointsBox.Name = "PointsBox";
+            this.PointsBox.ReadOnly = true;
             this.PointsBox.Size = new System.Drawing.Size(103, 20);
             this.PointsBox.TabIndex = 17;
             this.PointsBox.Text = "Points: ";
