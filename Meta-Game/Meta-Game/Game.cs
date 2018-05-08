@@ -14,8 +14,6 @@ namespace Meta_Game {
                 true);
             PointsBox.Text = String.Format($"{0}", PointValue);
         }
-        
-        /*
         private static void Shake(Form form) {
             var original = form.Location;
             var rnd = new Random(1337);
@@ -26,7 +24,6 @@ namespace Meta_Game {
             }
             form.Location = original;
         }
-        */
 
         private void RandomMove() {
             Random randNum = new Random();
@@ -55,7 +52,7 @@ namespace Meta_Game {
 
         private void Points() {
             PointValue++;
-            PointsBox.Text = String.Format($"{0}", PointValue);
+            PointsBox.Text = String.Format($"{PointValue}");
         }
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
 
@@ -69,7 +66,9 @@ namespace Meta_Game {
 
         }
         private void Button10_Click(object sender, EventArgs e) {
+            Shake(this);
             Points();
+            
         }
 
         private void Flower_Click(object sender, EventArgs e) {
