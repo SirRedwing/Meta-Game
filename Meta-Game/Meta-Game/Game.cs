@@ -44,7 +44,7 @@ namespace Meta_Game {
                     break;
 
                 case 2:
-                    flower.Image = Properties.Resources.Flower_2;
+                    flower.Image = Properties.Resources.Flower_2; 
                     System.Diagnostics.Debug.WriteLine("Came out as 2");
                     break;
             }

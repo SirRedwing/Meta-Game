@@ -23,56 +23,57 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.OpeningDialogue = new System.Windows.Forms.TextBox();
+            this.Option1 = new System.Windows.Forms.Button();
+            this.Option2 = new System.Windows.Forms.Button();
+            this.Option3 = new System.Windows.Forms.Button();
+            this.Option4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // OpeningDialogue
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 492);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1160, 177);
-            this.textBox1.TabIndex = 0;
+            this.OpeningDialogue.Location = new System.Drawing.Point(12, 511);
+            this.OpeningDialogue.Multiline = true;
+            this.OpeningDialogue.Name = "OpeningDialogue";
+            this.OpeningDialogue.ReadOnly = true;
+            this.OpeningDialogue.Size = new System.Drawing.Size(1160, 158);
+            this.OpeningDialogue.TabIndex = 0;
             // 
-            // button1
+            // Option1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Option1.Location = new System.Drawing.Point(12, 386);
+            this.Option1.Name = "Option1";
+            this.Option1.Size = new System.Drawing.Size(286, 100);
+            this.Option1.TabIndex = 1;
+            this.Option1.Text = "button1";
+            this.Option1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Option2
             // 
-            this.button2.Location = new System.Drawing.Point(304, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(286, 100);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Option2.Location = new System.Drawing.Point(304, 386);
+            this.Option2.Name = "Option2";
+            this.Option2.Size = new System.Drawing.Size(286, 100);
+            this.Option2.TabIndex = 2;
+            this.Option2.Text = "button2";
+            this.Option2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Option3
             // 
-            this.button3.Location = new System.Drawing.Point(594, 386);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(286, 100);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Option3.Location = new System.Drawing.Point(594, 386);
+            this.Option3.Name = "Option3";
+            this.Option3.Size = new System.Drawing.Size(286, 100);
+            this.Option3.TabIndex = 3;
+            this.Option3.Text = "button3";
+            this.Option3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Option4
             // 
-            this.button4.Location = new System.Drawing.Point(886, 386);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(286, 100);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Option4.Location = new System.Drawing.Point(886, 386);
+            this.Option4.Name = "Option4";
+            this.Option4.Size = new System.Drawing.Size(286, 100);
+            this.Option4.TabIndex = 4;
+            this.Option4.Text = "button4";
+            this.Option4.UseVisualStyleBackColor = true;
             // 
             // Welcome
             // 
@@ -80,11 +81,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1184, 681);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Option4);
+            this.Controls.Add(this.Option3);
+            this.Controls.Add(this.Option2);
+            this.Controls.Add(this.Option1);
+            this.Controls.Add(this.OpeningDialogue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MaximizeBox = false;
@@ -97,10 +98,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox OpeningDialogue;
+        private System.Windows.Forms.Button Option1;
+        private System.Windows.Forms.Button Option2;
+        private System.Windows.Forms.Button Option3;
+        private System.Windows.Forms.Button Option4;
     }
 }
