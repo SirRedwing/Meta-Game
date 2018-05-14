@@ -13,16 +13,27 @@ namespace Meta_Game {
     public partial class Welcome: Form {
         public Welcome() {
             InitializeComponent();
+            ActivateHide();
         }
 
-        private bool ActivateHide()
+        public void ActivateHide()
         {
-            List<Button> options = new List<Button> {Option1, Option2, Option3, Option4};
-            foreach (Button option in options)
-            {
-                Hide();
-            }
+            Option1.Hide();
+            Option2.Hide();
+            Option3.Hide();
+            Option4.Hide();
             OpeningDialogue.Hide();
+        }
+        public void ActivateShow() {
+            Option1.Show();
+            Option2.Show();
+            Option3.Show();
+            Option4.Show();
+            OpeningDialogue.Show();
+        }
+
+        public void Button1_Click(object sender, EventArgs e) {
+            ActivateShow();
         }
     }
 }

@@ -28,6 +28,7 @@
             this.Option2 = new System.Windows.Forms.Button();
             this.Option3 = new System.Windows.Forms.Button();
             this.Option4 = new System.Windows.Forms.Button();
+            this.Function_Test = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OpeningDialogue
@@ -41,7 +42,7 @@
             // 
             // Option1
             // 
-            this.Option1.Location = new System.Drawing.Point(12, 386);
+            this.Option1.Location = new System.Drawing.Point(12, 405);
             this.Option1.Name = "Option1";
             this.Option1.Size = new System.Drawing.Size(286, 100);
             this.Option1.TabIndex = 1;
@@ -50,7 +51,7 @@
             // 
             // Option2
             // 
-            this.Option2.Location = new System.Drawing.Point(304, 386);
+            this.Option2.Location = new System.Drawing.Point(304, 405);
             this.Option2.Name = "Option2";
             this.Option2.Size = new System.Drawing.Size(286, 100);
             this.Option2.TabIndex = 2;
@@ -59,7 +60,7 @@
             // 
             // Option3
             // 
-            this.Option3.Location = new System.Drawing.Point(594, 386);
+            this.Option3.Location = new System.Drawing.Point(594, 405);
             this.Option3.Name = "Option3";
             this.Option3.Size = new System.Drawing.Size(286, 100);
             this.Option3.TabIndex = 3;
@@ -68,19 +69,31 @@
             // 
             // Option4
             // 
-            this.Option4.Location = new System.Drawing.Point(886, 386);
+            this.Option4.Location = new System.Drawing.Point(886, 405);
             this.Option4.Name = "Option4";
             this.Option4.Size = new System.Drawing.Size(286, 100);
             this.Option4.TabIndex = 4;
             this.Option4.Text = "button4";
             this.Option4.UseVisualStyleBackColor = true;
             // 
+            // Function_Test
+            // 
+            this.Function_Test.Location = new System.Drawing.Point(12, 12);
+            this.Function_Test.Name = "Function_Test";
+            this.Function_Test.Size = new System.Drawing.Size(91, 23);
+            this.Function_Test.TabIndex = 5;
+            this.Function_Test.Text = "Function Test";
+            this.Function_Test.UseVisualStyleBackColor = true;
+            this.Function_Test.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::Meta_Game.Properties.Resources.Title_Screen;
             this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.Controls.Add(this.Function_Test);
             this.Controls.Add(this.Option4);
             this.Controls.Add(this.Option3);
             this.Controls.Add(this.Option2);
@@ -91,6 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Welcome to Gather";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +117,6 @@
         private System.Windows.Forms.Button Option2;
         private System.Windows.Forms.Button Option3;
         private System.Windows.Forms.Button Option4;
+        private System.Windows.Forms.Button Function_Test;
     }
 }
