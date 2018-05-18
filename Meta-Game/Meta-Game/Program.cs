@@ -12,6 +12,9 @@
 // ---------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Meta_Game
@@ -26,7 +29,7 @@ namespace Meta_Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Welcome());
+            Application.Run(new Game());
         }
     }
 }

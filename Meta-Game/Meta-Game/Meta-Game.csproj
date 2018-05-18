@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusyBee.cs" />
     <Compile Include="ExitDialog.cs">
       <SubType>Form</SubType>
     </Compile>

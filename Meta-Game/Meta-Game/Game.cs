@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Meta_Game {
     public partial class Game: Form {
-        public int PointValue;
+        private int PointValue;
+
+        private List<Action> pointChangeEventsList = new List<Action>();
         public Game() {
             InitializeComponent();
             SetStyle(
@@ -44,7 +48,7 @@ namespace Meta_Game {
                     break;
 
                 case 2:
-                    flower.Image = Properties.Resources.Flower_2; 
+                    flower.Image = Properties.Resources.Flower_2;
                     System.Diagnostics.Debug.WriteLine("Came out as 2");
                     break;
             }
@@ -53,6 +57,41 @@ namespace Meta_Game {
         private void Points() {
             PointValue++;
             PointsBox.Text = String.Format($"{PointValue}");
+            OnPointValueChange();
+        }
+        private void OnPointValueChange() {
+            pointChangeEventsList.Add(FakeError);
+            foreach(Action pointMethod in pointChangeEventsList) {
+                pointChangeEventsList[0]();
+            }
+
+        }
+
+        private void FakeError() {
+            if(PointValue == 3) {
+                PointValue = Int32.MaxValue;
+                PointsBox.Text = String.Format($"{PointValue}");
+                Refresh();
+                //Task.Run(() => {
+                //    MessageBox.Show(@"Int Overflow, restart the application", @"Error",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    string errorstate = "1";
+                //    System.IO.File.WriteAllText("config.txt", errorstate);
+                //    Environment.Exit(0);
+                //});
+
+                //TaskCompletionSource<bool?> completion = new TaskCompletionSource<bool?>();
+                //this.Dispatcher.BeginInvoke(new Action(() => completion.SetResult(ShowDialog() == DialogResult.OK)));
+                //bool? result = await completion.Task;
+
+
+                MessageBox.Show(@"Int Overflow, restart the application", @"Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string errorstate = "1";
+                System.IO.File.WriteAllText("config.txt", errorstate);
+                Environment.Exit(0);
+            }
+
         }
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
 
@@ -66,9 +105,8 @@ namespace Meta_Game {
 
         }
         private void Button10_Click(object sender, EventArgs e) {
-            Shake(this);
-            Points();
-            
+            FakeError();
+
         }
 
         private void Flower_Click(object sender, EventArgs e) {
