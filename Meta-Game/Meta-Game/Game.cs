@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Meta_Game {
     public partial class Game: Form {
-        private int PointValue;
+        private int pointValue;
+        int shakeCalled = 1;
 
         private List<Action> pointChangeEventsList = new List<Action>();
         public Game() {
@@ -16,12 +17,15 @@ namespace Meta_Game {
                 ControlStyles.UserPaint |
                 ControlStyles.DoubleBuffer,
                 true);
-            PointsBox.Text = String.Format($"{0}", PointValue);
+            PointsBox.Text = String.Format($"{0}", pointValue);
+            button2.Hide();
+            ActivateGlitch();
         }
-        private static void Shake(Form form) {
+
+        private void Shake(Form form) {
             var original = form.Location;
             var rnd = new Random(1337);
-            const int shakeAmplitude = 1;
+            int shakeAmplitude = shakeCalled;
             for(int i = 0; i < 10; i++) {
                 form.Location = new Point(original.X + rnd.Next(-shakeAmplitude, shakeAmplitude), original.Y + rnd.Next(-shakeAmplitude, shakeAmplitude));
                 System.Threading.Thread.Sleep(20);
@@ -32,11 +36,26 @@ namespace Meta_Game {
         private void RandomMove() {
             Random randNum = new Random();
 
+            if(randNum.Next(1, 5) == 3) {
+                button2.Show();
+            }
+
             int newPositionX = randNum.Next(200, 1000);
             int newPositionY = randNum.Next(200, 520);
             flower.Location = new Point(newPositionX, newPositionY);
         }
 
+        private void RandomGlitch() {
+            Random randNum = new Random();
+
+            if(randNum.Next(1, 5) == 3) {
+                button2.Show();
+            }
+
+            int newPositionX = randNum.Next(200, 1000);
+            int newPositionY = randNum.Next(200, 520);
+            flower.Location = new Point(newPositionX, newPositionY);
+        }
         private void RandomImage() {
             Random randImg = new Random();
 
@@ -55,8 +74,8 @@ namespace Meta_Game {
         }
 
         private void Points() {
-            PointValue++;
-            PointsBox.Text = String.Format($"{PointValue}");
+            pointValue++;
+            PointsBox.Text = String.Format($"{pointValue}");
             OnPointValueChange();
         }
         private void OnPointValueChange() {
@@ -68,30 +87,23 @@ namespace Meta_Game {
         }
 
         private void FakeError() {
-            if(PointValue == 3) {
-                PointValue = Int32.MaxValue;
-                PointsBox.Text = String.Format($"{PointValue}");
+            if(pointValue == 67) {
+                pointValue = Int32.MaxValue;
+                PointsBox.Text = String.Format($"{pointValue}");
                 Refresh();
-                //Task.Run(() => {
-                //    MessageBox.Show(@"Int Overflow, restart the application", @"Error",
-                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    string errorstate = "1";
-                //    System.IO.File.WriteAllText("config.txt", errorstate);
-                //    Environment.Exit(0);
-                //});
-
-                //TaskCompletionSource<bool?> completion = new TaskCompletionSource<bool?>();
-                //this.Dispatcher.BeginInvoke(new Action(() => completion.SetResult(ShowDialog() == DialogResult.OK)));
-                //bool? result = await completion.Task;
-
-
                 MessageBox.Show(@"Int Overflow, restart the application", @"Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 string errorstate = "1";
-                System.IO.File.WriteAllText("config.txt", errorstate);
+                File.WriteAllText("config.txt", errorstate);
                 Environment.Exit(0);
             }
 
+        }
+
+        private void ActivateGlitch() {
+            if(File.Exists("config.txt" ) && File.ReadAllText("config.txt") == "1") {
+                button2.Show();
+            } 
         }
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
 
@@ -105,7 +117,7 @@ namespace Meta_Game {
 
         }
         private void Button10_Click(object sender, EventArgs e) {
-            FakeError();
+            Points();
 
         }
 
@@ -121,6 +133,16 @@ namespace Meta_Game {
 
         private void Game_Load(object sender, EventArgs e) {
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e) {
+            button2.Hide();
+            Shake(this);
+            shakeCalled++;
+            RandomGlitch();
+            pointValue = pointValue + 200;
+            PointsBox.Text = String.Format($"{pointValue}");
+            Refresh();
         }
     }
 }

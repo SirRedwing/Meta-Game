@@ -28,6 +28,7 @@
             this.flower = new System.Windows.Forms.Button();
             this.FunctionTest = new System.Windows.Forms.Button();
             this.PointsBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Menu
@@ -53,7 +54,7 @@
             this.flower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flower.ForeColor = System.Drawing.Color.Transparent;
             this.flower.Image = ((System.Drawing.Image)(resources.GetObject("flower.Image")));
-            this.flower.Location = new System.Drawing.Point(307, 161);
+            this.flower.Location = new System.Drawing.Point(134, 215);
             this.flower.Margin = new System.Windows.Forms.Padding(0);
             this.flower.Name = "flower";
             this.flower.Size = new System.Drawing.Size(146, 146);
@@ -84,6 +85,27 @@
             this.PointsBox.Text = "Points: ";
             this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.CausesValidation = false;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Image = global::Meta_Game.Properties.Resources.Strange_Blob;
+            this.button2.Location = new System.Drawing.Point(868, 359);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 146);
+            this.button2.TabIndex = 18;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,6 +113,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Meta_Game.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.PointsBox);
             this.Controls.Add(this.FunctionTest);
             this.Controls.Add(this.flower);
@@ -116,6 +139,7 @@
         private System.Windows.Forms.Button flower;
         private System.Windows.Forms.Button FunctionTest;
         private System.Windows.Forms.TextBox PointsBox;
+        private System.Windows.Forms.Button button2;
     }
 }
 
