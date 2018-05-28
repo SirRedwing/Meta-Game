@@ -88,14 +88,16 @@ namespace Meta_Game {
 
         private void FakeError() {
             if(pointValue == 67) {
-                pointValue = Int32.MaxValue;
-                PointsBox.Text = String.Format($"{pointValue}");
-                Refresh();
-                MessageBox.Show(@"Int Overflow, restart the application", @"Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string errorstate = "1";
-                File.WriteAllText("config.txt", errorstate);
-                Environment.Exit(0);
+                if(!File.Exists("config.txt")) {
+                    pointValue = Int32.MaxValue;
+                    PointsBox.Text = String.Format($"{pointValue}");
+                    Refresh();
+                    MessageBox.Show(@"Int Overflow, restart the application", @"Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string errorstate = "1";
+                    File.WriteAllText("config.txt", errorstate);
+                    Environment.Exit(0);
+                }
             }
 
         }
