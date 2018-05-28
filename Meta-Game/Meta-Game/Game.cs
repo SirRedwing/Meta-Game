@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace Meta_Game
 {
@@ -24,7 +25,23 @@ namespace Meta_Game
             PointsBox.Text = String.Format($"{0}", pointValue);
             button2.Hide();
             ActivateGlitch();
+            //PlayMusic();
         }
+
+        //private void PlayMusic()
+        //{
+        //    if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
+        //    {
+        //        SoundPlayer Music = new SoundPlayer(Properties.Resources.halfbitfreaky);
+        //       Music.Play();
+        //    }
+        //    else
+        //    {
+        //        SoundPlayer Music = new SoundPlayer(Properties.Resources.HalfBit);
+        //        Music.Play();
+        //    }
+
+        //}
 
         private void Shake(Form form)
         {
@@ -42,11 +59,14 @@ namespace Meta_Game
         private void RandomMove()
         {
             Random randNum = new Random();
-
-            if (randNum.Next(1, 5) == 3)
+            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
             {
-                button2.Show();
+                if (randNum.Next(1, 5) == 3)
+                {
+                    button2.Show();
+                }
             }
+            
 
             int newPositionX = randNum.Next(200, 1000);
             int newPositionY = randNum.Next(200, 520);
@@ -66,21 +86,20 @@ namespace Meta_Game
             int newPositionY = randNum.Next(200, 520);
             flower.Location = new Point(newPositionX, newPositionY);
         }
+
         private void RandomImage()
         {
             Random randImg = new Random();
 
-            int nextImg = randImg.Next(1, 3);
+            int nextImg = randImg.Next(1, 2);
             switch (nextImg)
             {
                 case 1:
                     flower.Image = Properties.Resources.Flower_1;
-                    System.Diagnostics.Debug.WriteLine("Came out as 1");
                     break;
 
                 case 2:
                     flower.Image = Properties.Resources.Flower_2;
-                    System.Diagnostics.Debug.WriteLine("Came out as 2");
                     break;
             }
         }
@@ -91,6 +110,7 @@ namespace Meta_Game
             PointsBox.Text = String.Format($"{pointValue}");
             OnPointValueChange();
         }
+
         private void OnPointValueChange()
         {
             pointChangeEventsList.Add(FakeError);
@@ -132,7 +152,8 @@ namespace Meta_Game
         {
             glitchPressed++;
 
-            switch(glitchPressed){
+            switch (glitchPressed)
+            {
                 case 1:
                     MessageBox.Show(@"“Don’t touch that!”", @"Stop",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -169,16 +190,19 @@ namespace Meta_Game
         {
 
         }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             ExitDialog exit = new ExitDialog();
             exit.Show();
             e.Cancel = true;
         }
+
         private void Menu_Click(object sender, EventArgs e)
         {
 
         }
+
         private void Button10_Click(object sender, EventArgs e)
         {
             Points();
@@ -208,7 +232,7 @@ namespace Meta_Game
             Shake(this);
             ErrorPress();
             shakeCalled++;
-            if(shakeCalled == 6)
+            if (shakeCalled == 6)
             {
                 shakeCalled = 100;
             }

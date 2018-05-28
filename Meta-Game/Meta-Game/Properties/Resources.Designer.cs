@@ -103,18 +103,18 @@ namespace Meta_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Half_Bit {
+        internal static System.IO.UnmanagedMemoryStream HalfBit {
             get {
-                return ResourceManager.GetStream("Half_Bit", resourceCulture);
+                return ResourceManager.GetStream("HalfBit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream halfbit_freaky {
+        internal static System.IO.UnmanagedMemoryStream halfbitfreaky {
             get {
-                return ResourceManager.GetStream("halfbit_freaky", resourceCulture);
+                return ResourceManager.GetStream("halfbitfreaky", resourceCulture);
             }
         }
         

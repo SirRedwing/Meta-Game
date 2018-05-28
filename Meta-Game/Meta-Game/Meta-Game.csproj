@@ -130,10 +130,14 @@
     <None Include="Resources\IMG_0533.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\halfbit freaky.wav" />
+    <Content Include="Resources\halfbitfreaky.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Half Bit.wav" />
+    <Content Include="Resources\HalfBit.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

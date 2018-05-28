@@ -130,11 +130,11 @@
   <data name="Flower_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flower_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="halfbit_freaky" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\halfbit freaky.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="halfbitfreaky" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\halfbitfreaky.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Half_Bit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Half Bit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="HalfBit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HalfBit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Menu_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
