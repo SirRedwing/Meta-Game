@@ -68,7 +68,7 @@
             this.PointsBox.Location = new System.Drawing.Point(12, 12);
             this.PointsBox.Name = "PointsBox";
             this.PointsBox.ReadOnly = true;
-            this.PointsBox.Size = new System.Drawing.Size(103, 20);
+            this.PointsBox.Size = new System.Drawing.Size(100, 20);
             this.PointsBox.TabIndex = 17;
             this.PointsBox.Text = "Points: ";
             this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
