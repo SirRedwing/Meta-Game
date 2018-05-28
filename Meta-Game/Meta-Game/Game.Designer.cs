@@ -24,23 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.Menu = new System.Windows.Forms.Button();
             this.flower = new System.Windows.Forms.Button();
             this.FunctionTest = new System.Windows.Forms.Button();
             this.PointsBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // Menu
-            // 
-            this.Menu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Menu.Image = global::Meta_Game.Properties.Resources.Menu_Button;
-            this.Menu.Location = new System.Drawing.Point(1124, 14);
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(46, 21);
-            this.Menu.TabIndex = 6;
-            this.Menu.UseVisualStyleBackColor = true;
-            this.Menu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // flower
             // 
@@ -77,7 +65,7 @@
             // PointsBox
             // 
             this.PointsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PointsBox.Location = new System.Drawing.Point(598, 31);
+            this.PointsBox.Location = new System.Drawing.Point(12, 12);
             this.PointsBox.Name = "PointsBox";
             this.PointsBox.ReadOnly = true;
             this.PointsBox.Size = new System.Drawing.Size(103, 20);
@@ -117,7 +105,6 @@
             this.Controls.Add(this.PointsBox);
             this.Controls.Add(this.FunctionTest);
             this.Controls.Add(this.flower);
-            this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MaximizeBox = false;
@@ -134,7 +121,6 @@
 
         #endregion
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-        private System.Windows.Forms.Button Menu;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         private System.Windows.Forms.Button flower;
         private System.Windows.Forms.Button FunctionTest;

@@ -9,17 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace Meta_Game {
-    public partial class Welcome: Form {
-        public Welcome() {
+namespace Meta_Game
+{
+    public partial class Welcome : Form
+    {
+        public Welcome()
+        {
             InitializeComponent();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            MessageBox.Show(@"“Welcome! Pick all the flowers to win”", @"Welcome",
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             Game play = new Game();
             play.Show();
-            this.Hide();
+
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

@@ -121,6 +121,9 @@
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Exit_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_0533.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Flower_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flower_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +132,9 @@
   </data>
   <data name="Menu_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Start_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_0534.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Strange_Blob" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Strange_Blob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
