@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-using System.Reflection;
 
 namespace Meta_Game
 {
@@ -18,12 +17,6 @@ namespace Meta_Game
         private List<Action> pointChangeEventsList = new List<Action>();
         public Game()
         {
-            // start game over if at level 2 -- TODO: change to "3" when level 2 is added
-            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "2")
-            {
-                File.Delete("config.txt");
-            }
-
             InitializeComponent();
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint |
@@ -73,7 +66,6 @@ namespace Meta_Game
                     button2.Show();
                 }
             }
-            
 
             int newPositionX = randNum.Next(200, 1000);
             int newPositionY = randNum.Next(200, 520);
