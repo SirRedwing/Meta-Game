@@ -15,7 +15,7 @@ namespace Meta_Game {
         public Welcome() {
             InitializeComponent();
         }
-
+        //Runs the start menu object "Start"
         private void StartButton_Click(object sender, EventArgs e) {
             this.Hide();
             if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "2") {
@@ -27,7 +27,7 @@ namespace Meta_Game {
                 play.Show();
             }
         }
-
+        //Closes the program.
         private void ExitButton_Click(object sender, EventArgs e) {
             Environment.Exit(0);
         }

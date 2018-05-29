@@ -23,6 +23,7 @@ namespace Meta_Game {
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        //MAKES THE WHOLE THING START!!!
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

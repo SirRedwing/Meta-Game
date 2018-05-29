@@ -64,7 +64,6 @@
             this.PointsBox.ReadOnly = true;
             this.PointsBox.Size = new System.Drawing.Size(200, 20);
             this.PointsBox.TabIndex = 17;
-            this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // button2
             // 
@@ -120,8 +119,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Game_Load);
-            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

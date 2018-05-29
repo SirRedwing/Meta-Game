@@ -7,9 +7,13 @@ using System.Media;
 
 namespace Meta_Game {
     public partial class Game: Form {
+        //Int that stores the value for how many points the player has acquired.
         private int pointValue;
+        //Int that stores the value for how hard the screen is supposed to shake during the Shake function.
         int shakeCalled = 1;
+        //Count's how many times the "glitch" object was pressed.
         int glitchPressed;
+        //Creates a variable to run the music.
         private SoundPlayer music;
 
         private List<Action> pointChangeEventsList = new List<Action>();
@@ -25,7 +29,7 @@ namespace Meta_Game {
             ActivateGlitch();
             PlayMusic();
         }
-
+        //Make's the music go.
         private void PlayMusic() {
             if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
                 music = new SoundPlayer(Properties.Resources.halfbitfreaky);
@@ -35,7 +39,7 @@ namespace Meta_Game {
                 music.PlayLooping();
             }
         }
-
+        //Makes the window shake.
         private void Shake(Form form) {
             var original = form.Location;
             var rnd = new Random(1337);
@@ -46,7 +50,7 @@ namespace Meta_Game {
             }
             form.Location = original;
         }
-
+        //Moves an object around randomly.
         private void RandomMove() {
             Random randNum = new Random();
             if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
@@ -59,7 +63,7 @@ namespace Meta_Game {
             int newPositionY = randNum.Next(200, 520);
             flower.Location = new Point(newPositionX, newPositionY);
         }
-
+        //Makes the "glitch" object move around and randomly appear.
         private void RandomGlitch() {
             Random randNum = new Random();
 
@@ -71,7 +75,7 @@ namespace Meta_Game {
             int newPositionY = randNum.Next(200, 520);
             flower.Location = new Point(newPositionX, newPositionY);
         }
-
+        //Changes the image on one of the objects randomly.
         private void RandomImage() {
             Random randImg = new Random();
 
@@ -86,13 +90,13 @@ namespace Meta_Game {
                     break;
             }
         }
-
+        //Iterates points everytime the player does what they are supposed to do.
         private void Points() {
             pointValue++;
             PointsBox.Text = String.Format($"{pointValue}");
             FakeError();
         }
-
+        //Calls a fake error message and closes the application.
         private void FakeError() {
             if(pointValue == 67) {
                 if(!File.Exists("config.txt")) {
@@ -108,13 +112,13 @@ namespace Meta_Game {
             }
 
         }
-
+        //Activates stage 2.
         private void ActivateGlitch() {
             if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
                 button2.Show();
             }
         }
-
+        //Iterates everytime the "glitch" is clicked on.
         private void ErrorPress() {
             glitchPressed++;
 
@@ -150,10 +154,7 @@ namespace Meta_Game {
                     break;
             }
         }
-
-        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
-        }
-
+        //Prevents user from closing program, except when the program closes itself.
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             if(e.CloseReason == CloseReason.UserClosing) {
                 ExitDialog exit = new ExitDialog();
@@ -161,26 +162,13 @@ namespace Meta_Game {
                 e.Cancel = true;
             }
         }
-
-        private void Menu_Click(object sender, EventArgs e) {
-        }
-
-        private void Button10_Click(object sender, EventArgs e) {
-            Points();
-        }
-
+        //Occurs whenever an object is clicked.
         private void Flower_Click(object sender, EventArgs e) {
             Points();
             RandomMove();
             RandomImage();
         }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void Game_Load(object sender, EventArgs e) {
-        }
-
+        //Occurs whenever the "glitch" is clicked.
         private void Button2_Click(object sender, EventArgs e) {
             button2.Hide();
             Shake(this);
