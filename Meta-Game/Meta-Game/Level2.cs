@@ -4,12 +4,9 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace Meta_Game
-{
-    class Level2
-    {
-        public static void Show()
-        {
+namespace Meta_Game {
+    class Level2 {
+        public static void Show() {
             Setup();
 
             //string username = UserName;
@@ -19,17 +16,15 @@ namespace Meta_Game
             string codeTwo;
             int milliseconds = 2000;
 
-            do
-            {
+            do {
                 Console.WriteLine("Insert code (all caps):");
                 code = Console.ReadLine();
-                if (code != "WE DO NOT KNOW WHERE HE IS")
-                {
+                if(code != "WE DO NOT KNOW WHERE HE IS") {
                     Console.WriteLine("");
                     Console.WriteLine("Code is wrong. Try again.");
                     Console.WriteLine("");
                 }
-            } while (code != "WE DO NOT KNOW WHERE HE IS");
+            } while(code != "WE DO NOT KNOW WHERE HE IS");
 
             Console.WriteLine("");
             Console.WriteLine("You did not listen.");
@@ -46,30 +41,24 @@ namespace Meta_Game
             string outStr;
             int filesToCreate = 100;
             int randNum = new Random().Next(0, filesToCreate);
-            for (int x = 0; x < filesToCreate; x++)
-            {
-                if (x == randNum)
-                {
+            for(int x = 0; x < filesToCreate; x++) {
+                if(x == randNum) {
                     outStr = oddStr;
-                }
-                else
-                {
+                } else {
                     outStr = normStr;
                 }
                 File.WriteAllText($@"{path}\leaveusalone{x + 1}.txt", outStr);
             }
 
-            do
-            {
+            do {
                 Console.WriteLine("Insert code:");
                 codeTwo = Console.ReadLine();
-                if (codeTwo != "Amaryllis belladonna")
-                {
+                if(codeTwo != "Amaryllis belladonna") {
                     Console.WriteLine("");
                     Console.WriteLine("Code is wrong. Try again.");
                     Console.WriteLine("");
                 }
-            } while (codeTwo != "Amaryllis belladonna");
+            } while(codeTwo != "Amaryllis belladonna");
 
             Console.WriteLine("");
             Console.WriteLine("w e  w i l l  f i n d  y o u  n e x t");
@@ -91,23 +80,19 @@ namespace Meta_Game
         }
 
         // copied from https://stackoverflow.com/questions/41624103/console-out-output-is-showing-in-output-window-needed-in-allocconsole
-        private static void Setup()
-        {
-            if (AllocConsole())
-            {
+        private static void Setup() {
+            if(AllocConsole()) {
                 //https://developercommunity.visualstudio.com/content/problem/12166/console-output-is-gone-in-vs2017-works-fine-when-d.html
                 // Console.OpenStandardOutput eventually calls into GetStdHandle. As per MSDN documentation of GetStdHandle: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683231(v=vs.85).aspx will return the redirected handle and not the allocated console:
                 // "The standard handles of a process may be redirected by a call to  SetStdHandle, in which case  GetStdHandle returns the redirected handle. If the standard handles have been redirected, you can specify the CONIN$ value in a call to the CreateFile function to get a handle to a console's input buffer. Similarly, you can specify the CONOUT$ value to get a handle to a console's active screen buffer."
                 // Get the handle to CONOUT$.    
                 var stdOutHandle = CreateFile("CONOUT$", DesiredAccess.GenericRead | DesiredAccess.GenericWrite, FileShare.ReadWrite, 0, FileMode.Open, FileAttributes.Normal, 0);
 
-                if (stdOutHandle == new IntPtr(-1))
-                {
+                if(stdOutHandle == new IntPtr(-1)) {
                     throw new Win32Exception(Marshal.GetLastWin32Error());
                 }
 
-                if (!SetStdHandle(StdHandle.Output, stdOutHandle))
-                {
+                if(!SetStdHandle(StdHandle.Output, stdOutHandle)) {
                     throw new Win32Exception(Marshal.GetLastWin32Error());
                 }
 
@@ -132,16 +117,14 @@ namespace Meta_Game
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern bool SetStdHandle(StdHandle nStdHandle, IntPtr hHandle);
 
-        private enum StdHandle : int
-        {
+        private enum StdHandle: int {
             Input = -10,
             Output = -11,
             Error = -12
         }
 
         [Flags]
-        enum DesiredAccess : uint
-        {
+        enum DesiredAccess: uint {
             GenericRead = 0x80000000,
             GenericWrite = 0x40000000,
             GenericExecute = 0x20000000,

@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Meta_Game {
-    class BusyBee
-    {
+    class BusyBee {
 
         public Form f;
 
-        public BusyBee(Form f)
-        {
+        public BusyBee(Form f) {
             this.f = f;
         }
 

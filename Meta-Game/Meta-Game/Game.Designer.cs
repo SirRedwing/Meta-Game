@@ -23,11 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.flower = new System.Windows.Forms.Button();
-            this.FunctionTest = new System.Windows.Forms.Button();
             this.PointsBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flower
@@ -51,26 +54,16 @@
             this.flower.UseVisualStyleBackColor = false;
             this.flower.Click += new System.EventHandler(this.Flower_Click);
             // 
-            // FunctionTest
-            // 
-            this.FunctionTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FunctionTest.Location = new System.Drawing.Point(464, 31);
-            this.FunctionTest.Name = "FunctionTest";
-            this.FunctionTest.Size = new System.Drawing.Size(124, 19);
-            this.FunctionTest.TabIndex = 16;
-            this.FunctionTest.Text = "Function Test";
-            this.FunctionTest.UseVisualStyleBackColor = true;
-            this.FunctionTest.Click += new System.EventHandler(this.Button10_Click);
-            // 
             // PointsBox
             // 
             this.PointsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PointsBox.Location = new System.Drawing.Point(12, 12);
+            this.PointsBox.BackColor = System.Drawing.Color.Firebrick;
+            this.PointsBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PointsBox.Location = new System.Drawing.Point(12, 32);
             this.PointsBox.Name = "PointsBox";
             this.PointsBox.ReadOnly = true;
-            this.PointsBox.Size = new System.Drawing.Size(100, 20);
+            this.PointsBox.Size = new System.Drawing.Size(200, 20);
             this.PointsBox.TabIndex = 17;
-            this.PointsBox.Text = "Points: ";
             this.PointsBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // button2
@@ -94,6 +87,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Meta_Game.Properties.Resources.Point_Box;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 40);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,8 +111,8 @@
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.PointsBox);
-            this.Controls.Add(this.FunctionTest);
             this.Controls.Add(this.flower);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MaximizeBox = false;
@@ -114,6 +122,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Game_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,9 +132,10 @@
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         private System.Windows.Forms.Button flower;
-        private System.Windows.Forms.Button FunctionTest;
         private System.Windows.Forms.TextBox PointsBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

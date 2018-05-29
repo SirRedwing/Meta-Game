@@ -5,18 +5,15 @@ using System.Windows.Forms;
 using System.IO;
 using System.Media;
 
-namespace Meta_Game
-{
-    public partial class Game : Form
-    {
+namespace Meta_Game {
+    public partial class Game: Form {
         private int pointValue;
         int shakeCalled = 1;
         int glitchPressed;
         private SoundPlayer music;
 
         private List<Action> pointChangeEventsList = new List<Action>();
-        public Game()
-        {
+        public Game() {
             InitializeComponent();
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint |
@@ -29,40 +26,31 @@ namespace Meta_Game
             PlayMusic();
         }
 
-        private void PlayMusic()
-        {
-            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
-            {
+        private void PlayMusic() {
+            if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
                 music = new SoundPlayer(Properties.Resources.halfbitfreaky);
                 music.PlayLooping();
-            }
-            else
-            {
+            } else {
                 music = new SoundPlayer(Properties.Resources.HalfBit);
                 music.PlayLooping();
             }
         }
 
-        private void Shake(Form form)
-        {
+        private void Shake(Form form) {
             var original = form.Location;
             var rnd = new Random(1337);
             int shakeAmplitude = shakeCalled;
-            for (int i = 0; i < 10; i++)
-            {
+            for(int i = 0; i < 10; i++) {
                 form.Location = new Point(original.X + rnd.Next(-shakeAmplitude, shakeAmplitude), original.Y + rnd.Next(-shakeAmplitude, shakeAmplitude));
                 System.Threading.Thread.Sleep(20);
             }
             form.Location = original;
         }
 
-        private void RandomMove()
-        {
+        private void RandomMove() {
             Random randNum = new Random();
-            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
-            {
-                if (randNum.Next(1, 5) == 3)
-                {
+            if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
+                if(randNum.Next(1, 5) == 3) {
                     button2.Show();
                 }
             }
@@ -72,12 +60,10 @@ namespace Meta_Game
             flower.Location = new Point(newPositionX, newPositionY);
         }
 
-        private void RandomGlitch()
-        {
+        private void RandomGlitch() {
             Random randNum = new Random();
 
-            if (randNum.Next(1, 5) == 3)
-            {
+            if(randNum.Next(1, 5) == 3) {
                 button2.Show();
             }
 
@@ -86,13 +72,11 @@ namespace Meta_Game
             flower.Location = new Point(newPositionX, newPositionY);
         }
 
-        private void RandomImage()
-        {
+        private void RandomImage() {
             Random randImg = new Random();
 
             int nextImg = randImg.Next(1, 2);
-            switch (nextImg)
-            {
+            switch(nextImg) {
                 case 1:
                     flower.Image = Properties.Resources.Flower_1;
                     break;
@@ -103,19 +87,15 @@ namespace Meta_Game
             }
         }
 
-        private void Points()
-        {
+        private void Points() {
             pointValue++;
             PointsBox.Text = String.Format($"{pointValue}");
             FakeError();
         }
 
-        private void FakeError()
-        {
-            if (pointValue == 67)
-            {
-                if (!File.Exists("config.txt"))
-                {
+        private void FakeError() {
+            if(pointValue == 67) {
+                if(!File.Exists("config.txt")) {
                     pointValue = Int32.MaxValue;
                     PointsBox.Text = String.Format($"{pointValue}");
                     Refresh();
@@ -129,20 +109,16 @@ namespace Meta_Game
 
         }
 
-        private void ActivateGlitch()
-        {
-            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
-            {
+        private void ActivateGlitch() {
+            if(File.Exists("config.txt") && File.ReadAllText("config.txt") == "1") {
                 button2.Show();
             }
         }
 
-        private void ErrorPress()
-        {
+        private void ErrorPress() {
             glitchPressed++;
 
-            switch (glitchPressed)
-            {
+            switch(glitchPressed) {
                 case 1:
                     MessageBox.Show(@"“Don’t touch that!”", @"Stop",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -175,52 +151,42 @@ namespace Meta_Game
             }
         }
 
-        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e) {
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+            if(e.CloseReason == CloseReason.UserClosing) {
                 ExitDialog exit = new ExitDialog();
                 exit.Show();
                 e.Cancel = true;
             }
         }
 
-        private void Menu_Click(object sender, EventArgs e)
-        {
+        private void Menu_Click(object sender, EventArgs e) {
         }
 
-        private void Button10_Click(object sender, EventArgs e)
-        {
+        private void Button10_Click(object sender, EventArgs e) {
             Points();
         }
 
-        private void Flower_Click(object sender, EventArgs e)
-        {
+        private void Flower_Click(object sender, EventArgs e) {
             Points();
             RandomMove();
             RandomImage();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
+        private void TextBox1_TextChanged(object sender, EventArgs e) {
         }
 
-        private void Game_Load(object sender, EventArgs e)
-        {
+        private void Game_Load(object sender, EventArgs e) {
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
+        private void Button2_Click(object sender, EventArgs e) {
             button2.Hide();
             Shake(this);
             ErrorPress();
             shakeCalled++;
-            if (shakeCalled == 6)
-            {
+            if(shakeCalled == 6) {
                 shakeCalled = 100;
             }
             RandomGlitch();

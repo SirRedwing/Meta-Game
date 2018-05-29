@@ -134,6 +134,7 @@
     <Content Include="Resources\halfbitfreaky.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\IMG_0535.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\HalfBit.wav">
