@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
+using System.Reflection;
 
 namespace Meta_Game
 {
@@ -12,10 +13,17 @@ namespace Meta_Game
         private int pointValue;
         int shakeCalled = 1;
         int glitchPressed;
+        private SoundPlayer music;
 
         private List<Action> pointChangeEventsList = new List<Action>();
         public Game()
         {
+            // start game over if at level 2 -- TODO: change to "3" when level 2 is added
+            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "2")
+            {
+                File.Delete("config.txt");
+            }
+
             InitializeComponent();
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint |
@@ -25,23 +33,22 @@ namespace Meta_Game
             PointsBox.Text = String.Format($"{0}", pointValue);
             button2.Hide();
             ActivateGlitch();
-            //PlayMusic();
+            PlayMusic();
         }
 
-        //private void PlayMusic()
-        //{
-        //    if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
-        //    {
-        //        SoundPlayer Music = new SoundPlayer(Properties.Resources.halfbitfreaky);
-        //       Music.Play();
-        //    }
-        //    else
-        //    {
-        //        SoundPlayer Music = new SoundPlayer(Properties.Resources.HalfBit);
-        //        Music.Play();
-        //    }
-
-        //}
+        private void PlayMusic()
+        {
+            if (File.Exists("config.txt") && File.ReadAllText("config.txt") == "1")
+            {
+                music = new SoundPlayer(Properties.Resources.halfbitfreaky);
+                music.PlayLooping();
+            }
+            else
+            {
+                music = new SoundPlayer(Properties.Resources.HalfBit);
+                music.PlayLooping();
+            }
+        }
 
         private void Shake(Form form)
         {
@@ -108,17 +115,7 @@ namespace Meta_Game
         {
             pointValue++;
             PointsBox.Text = String.Format($"{pointValue}");
-            OnPointValueChange();
-        }
-
-        private void OnPointValueChange()
-        {
-            pointChangeEventsList.Add(FakeError);
-            foreach (Action pointMethod in pointChangeEventsList)
-            {
-                pointChangeEventsList[0]();
-            }
-
+            FakeError();
         }
 
         private void FakeError()
@@ -134,7 +131,7 @@ namespace Meta_Game
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     string errorstate = "1";
                     File.WriteAllText("config.txt", errorstate);
-                    Environment.Exit(0);
+                    Application.Exit();
                 }
             }
 
@@ -181,32 +178,32 @@ namespace Meta_Game
                     string errorState2 = "2";
                     File.WriteAllText("config.txt", errorState2);
 
-                    Environment.Exit(1);
+                    Application.Exit();
                     break;
             }
         }
 
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ExitDialog exit = new ExitDialog();
-            exit.Show();
-            e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                ExitDialog exit = new ExitDialog();
+                exit.Show();
+                e.Cancel = true;
+            }
         }
 
         private void Menu_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Button10_Click(object sender, EventArgs e)
         {
             Points();
-
         }
 
         private void Flower_Click(object sender, EventArgs e)
@@ -218,12 +215,10 @@ namespace Meta_Game
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
